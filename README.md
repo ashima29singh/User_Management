@@ -1,4 +1,4 @@
-A User management app created using ReactJS and Tailwind CSS. This app features functinalities like list, edit and add users and roles.
+A User management app created using ReactJS and Tailwind CSS. This app features functionalities like list, edit and add users and roles.
 
 ## How to run locally?
 - Install all the dependencies `npm install`
