@@ -1,10 +1,6 @@
-// import * as React from 'react';
-import Box from "@mui/material/Box";
-import { DataGrid } from "@mui/x-data-grid";
 import React, { useState, useEffect } from "react";
-import UserItem from "./useritem";
+import UserItem from "./UserItem";
 import UserModal from "./AddUserModal";
-
 
 const rows = [
   {
@@ -17,14 +13,14 @@ const rows = [
   {
     name: "Leanne Graham",
     username: "Bret",
-    role: "Admin",
+    role: "Approver",
     email: "Sincere@april.biz",
     phone: "98384735436",
   },
   {
     name: "Ervin Howell",
     username: "Antonette",
-    role: "User",
+    role: "Manager",
     email: "Sincere@april.biz",
     phone: "6774837657",
   },
@@ -38,37 +34,21 @@ const rows = [
   {
     name: "Kurtis Weissnat",
     username: "Elwyn.Skiles",
-    role: "User",
+    role: "Manager",
     email: "Sincere@april.biz",
     phone: "9864326560",
   },
   {
     name: "Glenna Reichert",
     username: "Delphine",
-    role: "Viewer",
+    role: "Approver",
     email: "Sincere@april.biz",
     phone: "8976543201",
   },
 ];
 
-export default function DataGridDemo() {
+export default function UserList() {
   const [isModalOpen, setIsModalOpen] = useState(false);
-
-  // const updateNews = async () => {
-  //   try {
-  //     const url = `https://jsonplaceholder.typicode.com/users`;
-  //     const response = await fetch(url);
-  //     if (!response.ok) throw new Error("Failed to fetch data");
-  //     const parsedData = await response.json();
-  //     setRows(parsedData); // Set the rows with fetched data
-  //   } catch (error) {
-  //     console.error("Error fetching data:", error);
-  //   }
-  // };
-  //   useEffect(() => {
-  //     updateNews();
-  //   }, []);
-  // console.log(rows);
 
   return (
     <div className="row px-8 py-4">
@@ -84,7 +64,10 @@ export default function DataGridDemo() {
           <span className="text-l font-bold ">All Users </span>
           <span className="text-l text-gray-500">{rows.length}</span>
         </div>
-        <button className="flex items-center px-4 py-2 bg-black text-white rounded" onClick={() => setIsModalOpen(true)}>
+        <button
+          className="flex items-center px-4 py-2 bg-black text-white rounded"
+          onClick={() => setIsModalOpen(true)}
+        >
           <span className="text-xl font-bold mr-2">+</span>
           <span>Add User</span>
         </button>
@@ -100,6 +83,7 @@ export default function DataGridDemo() {
         <h1 className="col-span-2">Phone</h1>
       </div>
       <hr className="border border-gray-200"></hr>
+
       {rows.map((element) => {
         return (
           <div className="col-md-4" key={element.username}>
